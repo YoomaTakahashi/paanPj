@@ -30,10 +30,10 @@
                                     :type="showPw2 ? 'text' : 'password'" :append-inner-icon="show ? 'mdi-eye-off' : 'mdi-eye'" @click:append-inner="showPw2 = !showPw2"></v-text-field>
                                 </v-col>
                                 <v-col cols="12">
-                                    <v-alert>{{ form.value }}</v-alert>
+                                    <v-alert>{{ form.role }}</v-alert>
                                 </v-col>
                                 <v-col cols="12" class="text-center">
-                                    <v-btn type="submit" color="success">สมัคร</v-btn>&nbsp;&nbsp;<v-btn type="reset" color="warning">ยกเลิก</v-btn>
+                                    <v-btn type="submit" color="success">แก้ไข</v-btn>&nbsp;&nbsp;<v-btn type="reset" color="warning">ยกเลิก</v-btn>
                                     
                                 </v-col>
                             </v-row>
@@ -85,7 +85,7 @@ function validateForm(){
 const saveMember = async () =>{
     if(!validateForm())return
     try{
-        await axios.post(`${eva}/edit_eva/`,form.value,{headers:{Authorization:`Bearer ${token}`}})
+        await axios.put(`${eva}/edit_eva/`,form.value,{headers:{Authorization:`Bearer ${token}`}})
         alert('แก้ไขสำเร็จ')
         localStorage.removeItem('token')
         navigateTo('/',{replace:true})
