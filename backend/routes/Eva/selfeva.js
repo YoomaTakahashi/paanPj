@@ -16,6 +16,14 @@ router.get('/user',verifyToken,requireRole('ผู้รับการประ
     }
 })
 
+router.get('/topic',verifyToken,requireRole('ผู้รับการประเมินผล'),async(req,res)=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+})
+
 
 
 module.exports = router
