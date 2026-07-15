@@ -12,7 +12,7 @@
                         <v-col cols="12">
                             <h1 class="text-h5">{{ t + 1 }}.{{ topic.name_topic }}</h1>
                             <v-card class="pa-2">
-                                <v-row v-for="(indicate, i) in indicates" :key="indicate.id_indicate">
+                                <v-row v-for="(indicate, i) in topic.indicates" :key="indicate.id_indicate">
                                     <v-col cols="12">
                                         {{ t + 1 }}.{{ i + 1 }} {{ indicate.name_indicate }} รายละเอียดตัวชี้วัด : {{
                                         indicate.detail_eva }} น้ำหนักคะแนน : {{ indicate.point_indicate }} คะแนนเต็ม :
@@ -30,6 +30,9 @@
                             </v-card>
                         </v-col>
                     </v-row>
+                    <div class="text-center mt-4">
+                        <v-btn type="submit" color="blue">บันทึกคะแนน</v-btn>
+                    </div>
                 </v-form>
                 <v-alert v-else-if="user.status_eva === 2 || user.status_eva === 3"
                     type="success">ประเมินสำเร็จ</v-alert>
@@ -61,7 +64,7 @@ const fileMap = ref<Record<string, File>>({})
 const saveScore = async () => {
     const formData = new FormData()
     const allScore = topics.value.flatMap((t: any) =>
-        t.indicate.map((i: any) => {
+        t.indicates.map((i:any) => {
             const key = `${t.id_topic}-${i.id_indicate}`
             const file = fileMap.value[key]
             if (file) formData.append(`file_${key}`, file)

@@ -28,5 +28,8 @@ app.use('/api/Eva/edit_eva',edit_eva)
 const selfeva = require('./routes/Eva/selfeva')
 app.use('/api/Eva/selfeva',selfeva)
 
+const score_member = require('./routes/Eva/score_member')
+app.use('/api/Eva/score_member',score_member)
+
 app.use((req,res)=>res.status(404).json({message:'invalid Routes67'}))
 app.listen(3001, ()=>console.log("Sever Running On port 3001"))
