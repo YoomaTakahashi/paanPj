@@ -16,6 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `tb_commit`
+--
+
+DROP TABLE IF EXISTS `tb_commit`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tb_commit` (
+  `id_commit` int NOT NULL AUTO_INCREMENT,
+  `id_eva` int DEFAULT NULL,
+  `id_member` int DEFAULT NULL,
+  `status_commit` varchar(1) DEFAULT NULL,
+  `level_commit` varchar(100) DEFAULT NULL,
+  `detail_eva` text,
+  `signature` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_commit`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_commit`
+--
+
+LOCK TABLES `tb_commit` WRITE;
+/*!40000 ALTER TABLE `tb_commit` DISABLE KEYS */;
+INSERT INTO `tb_commit` VALUES (1,1,1,'n','ประธาน','-','-');
+/*!40000 ALTER TABLE `tb_commit` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tb_eva`
 --
 
@@ -194,4 +223,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-15 21:11:50
+-- Dump completed on 2026-07-16 16:46:55
