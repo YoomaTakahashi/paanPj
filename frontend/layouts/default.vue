@@ -94,7 +94,7 @@ const fetch = async () => {
 
 const bg = (role) => {
     if (role === 'ฝ่ายบุคลากร') return '#647687'
-    if (role === 'กรรมการประเมิน') return '#007FF'
+    if (role === 'กรรมการประเมิน') return '#007FFF'
     if (role === 'ผู้รับการประเมินผล') return '#7d0c14'
 }
 onMounted(fetch)
