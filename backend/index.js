@@ -37,5 +37,11 @@ app.use('/api/Eva/score_member',score_member)
 const score_commit = require('./routes/Eva/score_commit')
 app.use('/api/Eva/score_commit',score_commit)
 
+
+//commit 
+
+const showeva = require('./routes/Commit/showeva')
+app.use('/api/Commit/showeva',showeva)
+
 app.use((req,res)=>res.status(404).json({message:'invalid Routes67'}))
 app.listen(3001, ()=>console.log("Sever Running On port 3001"))
