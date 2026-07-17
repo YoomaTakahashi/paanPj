@@ -40,8 +40,34 @@ CREATE TABLE `tb_commit` (
 
 LOCK TABLES `tb_commit` WRITE;
 /*!40000 ALTER TABLE `tb_commit` DISABLE KEYS */;
-INSERT INTO `tb_commit` VALUES (1,1,1,'n','ประธาน','-','-');
+INSERT INTO `tb_commit` VALUES (1,1,2,'n','ประธาน','-','-');
 /*!40000 ALTER TABLE `tb_commit` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tb_doc`
+--
+
+DROP TABLE IF EXISTS `tb_doc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tb_doc` (
+  `id_doc` int NOT NULL AUTO_INCREMENT,
+  `name_doc` varchar(10) DEFAULT NULL,
+  `day_doc` date DEFAULT NULL,
+  `file_doc` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_doc`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tb_doc`
+--
+
+LOCK TABLES `tb_doc` WRITE;
+/*!40000 ALTER TABLE `tb_doc` DISABLE KEYS */;
+INSERT INTO `tb_doc` VALUES (1,'test','2025-06-05','-');
+/*!40000 ALTER TABLE `tb_doc` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -97,7 +123,7 @@ CREATE TABLE `tb_evadetail` (
 
 LOCK TABLES `tb_evadetail` WRITE;
 /*!40000 ALTER TABLE `tb_evadetail` DISABLE KEYS */;
-INSERT INTO `tb_evadetail` VALUES (1,1,'1','test',3,NULL,NULL),(1,1,'1','test',3,NULL,NULL),(1,1,'1','test',3,NULL,NULL),(1,1,'1','test',3,NULL,NULL);
+INSERT INTO `tb_evadetail` VALUES (1,1,'1','test',3,NULL,'1'),(1,1,'1','test',3,NULL,'1'),(1,1,'1','test',3,NULL,'1'),(1,1,'1','test',3,NULL,'1');
 /*!40000 ALTER TABLE `tb_evadetail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -145,7 +171,7 @@ CREATE TABLE `tb_member` (
   `email` varchar(100) DEFAULT NULL,
   `role` enum('ฝ่ายบุคลากร','กรรมการประเมิน','ผู้รับการประเมินผล') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   PRIMARY KEY (`id_member`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,7 +180,7 @@ CREATE TABLE `tb_member` (
 
 LOCK TABLES `tb_member` WRITE;
 /*!40000 ALTER TABLE `tb_member` DISABLE KEYS */;
-INSERT INTO `tb_member` VALUES (1,'paan1','paan1','paanE','$2b$10$submCwnjKyguFJK/BNARvebiHJG4H40KOk19Q6Dhrqg0moUbu4qn6','paan1@test.com','ผู้รับการประเมินผล');
+INSERT INTO `tb_member` VALUES (1,'paan1','paan1','paanE','$2b$10$submCwnjKyguFJK/BNARvebiHJG4H40KOk19Q6Dhrqg0moUbu4qn6','paan1@test.com','ผู้รับการประเมินผล'),(2,'paanC','paanC','paanC1','$2b$10$rIN72awsQTimcp0NviOrReEfrhbldxnDeUrv/5PWo2ADY5hur08vq','test2@test.com','กรรมการประเมิน');
 /*!40000 ALTER TABLE `tb_member` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,4 +249,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-16 16:46:55
+-- Dump completed on 2026-07-17 17:40:26
