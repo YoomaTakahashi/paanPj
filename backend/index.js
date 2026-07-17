@@ -40,6 +40,10 @@ app.use('/api/Eva/score_commit',score_commit)
 
 //commit 
 
+const save_score = require('./routes/Commit/save_score')
+app.use('/api/Commit/save_score',save_score)
+
+
 const showeva = require('./routes/Commit/showeva')
 app.use('/api/Commit/showeva',showeva)
 
